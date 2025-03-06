@@ -29,11 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - run: tar \
-          --dereference --hard-dereference \
-          -cvf "$RUNNER_TEMP/artifact.tar" \
-          --exclude=.github \
-          .
+      - run: tar --dereference --hard-dereference -cvf "$RUNNER_TEMP/artifact.tar" --exclude=.github .
       - uses: actions/upload-artifact@v4
         with:
           name: github-pages
