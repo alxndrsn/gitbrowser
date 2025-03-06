@@ -36,10 +36,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: tar \
           --dereference --hard-dereference \
-          --directory "$INPUT_PATH" \
           -cvf "$RUNNER_TEMP/artifact.tar" \
           --exclude=.github \
-          --exclude=".[^/]*" \
           .
       - uses: actions/upload-artifact@v4
         with:
